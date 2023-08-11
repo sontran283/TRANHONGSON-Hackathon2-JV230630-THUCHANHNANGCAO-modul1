@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <form action="">
+        <h1>Student Information</h1>
+        <div class="thongtin">
+            <div class="hovaten">
+                <label for="">name:</label>
+                <input id="name" type="text" placeholder="enter your name..." required>
+            </div>
+            <div class="email">
+                <label for="">email:</label>
+                <input id="email" type="text" placeholder="enter your email..." required>
+            </div>
+            <div class="dienthoai">
+                <label for="">phone:</label>
+                <input id="phone" type="text" placeholder="enter your phone number..." required pattern="[0-9]{10}">
+            </div>
+            <div class="quequan">
+                <label for="">address:</label>
+                <input id="Address" type="text" placeholder="enter your address..." required>
+            </div>
+            <div class="gender" id="gender">
+                <label for="">gender:</label>
+                <input id="gender1" type="radio" name="gender" value="male" selected>
+                <span>male</span>
+                <input id="gender2" type="radio" name="gender" value="female">
+                <span>female</span><br>
+            </div>
+            <button id="save" type="submit" onclick="addNew(event)">Save</button>
+        </div>
+
+    </form>
+
+    <form action="">
+        <h1>Student List</h1>
+        <div>
+            <div>
+                <label for="">Search Name:</label>
+                <input id="search" type="text">
+                <button type="button" onclick="checkSearch()">search</button>
+            </div>
+        </div>
+        <table border="1" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>phone</th>
+                    <th>Address</th>
+                    <th>gender</th>
+                    <th colspan="2">action</th>
+                    <th>alpha b</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <!-- <tr>
+                    <td>1</td>
+                    <td>rikkei</td>
+                    <td>rikkei@gmail.com</td>
+                    <td>88888888</td>
+                    <td>hà nội</td>
+                    <td>nam</td>
+                    <td>
+                        <button onclick="beforeEdit()" id="edt">edit</button>
+                    </td>
+                    <td>
+                        <button onclick="onDelete()" id="delete">delete</button>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table><br>
+
+        <div id="question" style="display: none;">
+            <input type="text" id="editName" placeholder="edit Name">
+            <input type="text" id="editEmail" placeholder="edit Email">
+            <input type="text" id="editPhone" placeholder="edit Phone">
+            <input type="text" id="editAddress" placeholder="edit Address">
+            <input type="text" id="editgender" placeholder="edit gender">
+            <button onclick="onUpdate()" type="button">Update</button>
+            <button onclick="onCancel()" type="button">Cancel</button>
+        </div>
+
+    </form>
+    <script src="./main.js"></script>
+</body>
+
+</html>
